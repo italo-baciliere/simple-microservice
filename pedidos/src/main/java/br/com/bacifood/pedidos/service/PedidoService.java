@@ -42,13 +42,12 @@ public class PedidoService {
 
     public PedidoDto criarPedido(PedidoDto dto) {
         Pedido pedido = modelMapper.map(dto, Pedido.class);
-
         pedido.setDataHora(LocalDateTime.now());
         pedido.setStatus(Status.REALIZADO);
         pedido.getItens().forEach(item -> item.setPedido(pedido));
         Pedido salvo = repository.save(pedido);
-
-        return modelMapper.map(pedido, PedidoDto.class);
+        // return modelMapper.map(pedido, PedidoDto.class);
+        return modelMapper.map(salvo, PedidoDto.class);
     }
 
     public PedidoDto atualizaStatus(Long id, StatusDto dto) {

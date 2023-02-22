@@ -13,3 +13,5 @@ public class ServicediscoveryApplication {
 	}
 
 }
+
+// service discovery (Eureka service) - catálago com todos os serviços que podem atenter uma requisição
