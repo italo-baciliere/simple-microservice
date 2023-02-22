@@ -11,3 +11,9 @@ public class PagamentosApplication {
 	}
 
 }
+
+
+// service discovery (Eureka service)
+/*
+ * catálago com todos os serviços que podem atenter uma requisição
+*/

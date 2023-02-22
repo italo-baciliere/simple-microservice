@@ -1,0 +1,8 @@
+Repository pattern
+Separação das classes da aplicação com a classe que se quer trabalhar com o banco de dados.
+https://www.linkedin.com/pulse/voc%C3%AA-j%C3%A1-ouviu-falar-sobre-o-repository-pattern-samuel-ramos/?originalSubdomain=pt
+?????
+
+Páginação
+https://www.youtube.com/watch?v=ongEOYHl-6o
+

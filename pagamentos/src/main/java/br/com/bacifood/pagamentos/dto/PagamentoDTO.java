@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PagamentoDTO {
+public class PagamentoDTO {    
     private Long id;
     private BigDecimal valor;
     private String nome;
@@ -16,6 +16,6 @@ public class PagamentoDTO {
     private String expiracao;
     private String codigo;
     private Status status;
+    private Long formaDePagamentoId;
     private Long pedidoId;
-    private Long formaDePagamento;
 }
