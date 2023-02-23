@@ -10,7 +10,8 @@ import br.com.bacifood.pagamentos.dto.PagamentoDTO;
 import br.com.bacifood.pagamentos.model.Pagamento;
 import br.com.bacifood.pagamentos.model.Status;
 import br.com.bacifood.pagamentos.repository.PagamentoRepository;
-import jakarta.persistence.EntityNotFoundException;
+// import jakarta.persistence.EntityNotFoundException;
+import javax.persistence.EntityNotFoundException;
 
 @Service
 public class PagamentoService {

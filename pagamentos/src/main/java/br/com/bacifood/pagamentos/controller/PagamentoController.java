@@ -19,8 +19,10 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.bacifood.pagamentos.dto.PagamentoDTO;
 import br.com.bacifood.pagamentos.service.PagamentoService;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+// import jakarta.validation.Valid;
+// import jakarta.validation.constraints.NotNull;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @RestController
 @RequestMapping("/pagamentos")
