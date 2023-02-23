@@ -12,4 +12,11 @@ https://www.baeldung.com/spring-cloud-netflix-eureka
 https://cursos.alura.com.br/forum/topico-duvida-instancia-nao-aparece-na-eureka-259012
 
 EUREKA SERVER
-O Eureka Server é um serviço REST que será responsável por “conhecer” todas as nossas instâncias de serviços. 
+O Eureka Server é um serviço REST que será responsável por “conhecer” todas as nossas instâncias de serviços.
+Podemos dizer que existem dois padrões principais de service discovery: client-side (descoberta do lado cliente) e server-side (descoberta do lado servidor).
+o client-side discovery, o cliente (no caso o microsserviço ou o API Gateway) consulta o service registry, obtém a lista de instâncias do serviço que ele quer consumir e ele próprio é responsável por fazer o balanceamento de carga, escolhendo para qual instância irá direcionar a requisição (quando houver mais de uma instância do serviço que ele precisa consumir registrada).
+No server-side discovery ao invés do cliente consultar diretamente o service registry, é feita uma solicitação para uma camada intermediária como um DNS ou roteador, por exemplo, que faz a consulta ao service registry e o load balancing (balanceamento de carga), já encaminhando a requisição a uma das instâncias, garantindo que nenhum servidor seja sobrecarregado e desacoplando essa lógica do cliente.
+
+Executar uma instância em segundo plano
+    & "c:\alura-food\pedidos\mvnw.cmd" spring-boot:run -f "c:\alura-food\pedidos\pom.xml"
+    & "C:\Users\italo\Documents\Microservico\Microsservico na pratica - implementando com Java e Spring\simple-microservice\pedidos\mvnw.cmd" spring-boot:run -f "C:\Users\italo\Documents\Microservico\Microsservico na pratica - implementando com Java e Spring\simple-microservice\pedidos\pom.xml"

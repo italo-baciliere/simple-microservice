@@ -1,6 +1,7 @@
 package br.com.bacifood.pedidos.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -50,5 +51,10 @@ public class PedidoController {
         public ResponseEntity<Void> aprovaPagamento(@PathVariable @NotNull Long id) {
             service.aprovaPagamentoPedido(id);
             return ResponseEntity.ok().build();
+        }
+
+        @GetMapping("/porta")
+        public ResponseEntity<String> saberPorta(@Value("${local.server.port}") String porta){
+            return ResponseEntity.ok().body(String.format("Requisição respondida pela instância com porta: %s", porta));
         }
 }
