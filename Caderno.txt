@@ -6,3 +6,10 @@ https://www.linkedin.com/pulse/voc%C3%AA-j%C3%A1-ouviu-falar-sobre-o-repository-
 Páginação
 https://www.youtube.com/watch?v=ongEOYHl-6o
 
+Introduction to Spring Cloud Netflix – Eureka
+https://www.baeldung.com/spring-cloud-netflix-eureka
+
+https://cursos.alura.com.br/forum/topico-duvida-instancia-nao-aparece-na-eureka-259012
+
+EUREKA SERVER
+O Eureka Server é um serviço REST que será responsável por “conhecer” todas as nossas instâncias de serviços. 
