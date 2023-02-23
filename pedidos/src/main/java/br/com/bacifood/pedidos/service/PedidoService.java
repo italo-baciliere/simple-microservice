@@ -64,13 +64,9 @@ public class PedidoService {
     }
 
     public void aprovaPagamentoPedido(Long id) {
-
         Pedido pedido = repository.porIdComItens(id);
-
-        if (pedido == null) {
+        if (pedido == null)
             throw new EntityNotFoundException();
-        }
-
         pedido.setStatus(Status.PAGO);
         repository.atualizaStatus(Status.PAGO, pedido);
     }

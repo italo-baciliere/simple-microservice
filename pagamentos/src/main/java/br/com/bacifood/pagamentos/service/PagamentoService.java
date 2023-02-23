@@ -7,9 +7,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import br.com.bacifood.pagamentos.dto.PagamentoDTO;
+import br.com.bacifood.pagamentos.httpClient.PedidoClient;
 import br.com.bacifood.pagamentos.model.Pagamento;
 import br.com.bacifood.pagamentos.model.Status;
 import br.com.bacifood.pagamentos.repository.PagamentoRepository;
+
+import java.util.Optional;
+
 // import jakarta.persistence.EntityNotFoundException;
 import javax.persistence.EntityNotFoundException;
 
@@ -21,6 +25,9 @@ public class PagamentoService {
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @Autowired
+    private PedidoClient pedido;
 
     public Page<PagamentoDTO> obterTodos(Pageable paginacao){
         return repository
@@ -50,5 +57,14 @@ public class PagamentoService {
 
     public void excluirPagamento(Long id){
         repository.deleteById(id);
+    }
+
+    public void confirmarPagamento(Long id){
+        Optional<Pagamento> pagamento = repository.findById(id);
+        if(!pagamento.isPresent())
+            throw new EntityNotFoundException();
+        pagamento.get().setStatus(Status.CONFIRMADO);
+        repository.save(pagamento.get());
+        pedido.atualizaPagamento(pagamento.get().getId()); // PAGO
     }
 }
